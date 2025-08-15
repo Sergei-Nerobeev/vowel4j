@@ -1,0 +1,56 @@
+# Компилированные файлы классов
+*.class
+
+# Лог-файлы
+*.log
+
+# Папка сгенерированных файлов
+/bin/
+build/
+
+# Gradle
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Папка с данными кэша и временные файлы
+.cache/
+tmp/
+
+# Файлы конфигурации IDE
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+
+# Папка с библиотеками
+lib/
+
+# Файлы пакета
+*.jar
+*.war
+*.ear
+
+# Скрытые файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# SonarLint
+.sonarlint/
+
+# Папки и файлы кэша SonarLint для разных IDE
+/.idea/sonarlint/
+.vscode/sonarlint/
+.sonar/
+
+.vscode/
+
+.amplicode.xml
+/amplicode.xml
