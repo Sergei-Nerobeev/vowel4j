@@ -18,4 +18,5 @@ public class Vowel4j {
     Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'ö', 'u', 'ü', 'á', 'é', 'í', 'ó', 'ő', 'ú', 'ű');
     return vowels.contains(ch);
   }
+
 }
