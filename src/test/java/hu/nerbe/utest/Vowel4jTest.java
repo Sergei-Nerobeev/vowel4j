@@ -8,6 +8,7 @@ import static hu.nerbe.Vowel4j.isVowelRu;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 class Vowel4jTest {
 
   @DisplayName("ValidVowelRu")
