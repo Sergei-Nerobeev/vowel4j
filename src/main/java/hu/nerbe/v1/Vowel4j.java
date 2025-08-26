@@ -1,4 +1,4 @@
-package hu.nerbe;
+package hu.nerbe.v1;
 
 import java.util.Set;
 
