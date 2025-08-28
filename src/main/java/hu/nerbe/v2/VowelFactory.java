@@ -9,26 +9,31 @@ public class VowelFactory {
 
   private static final Set<String> SUPPORTED_LANGUAGES = Arrays
       .stream(Locale.getISOLanguages())
-      .collect(Collectors.toSet());
+      .collect(Collectors.toUnmodifiableSet());
 
   private static boolean isValidLanguage(String lang) {
     return SUPPORTED_LANGUAGES.contains(lang);
   }
 
-  public static Vowel checkVowels(String language) {
+  private static void nullChecker(String lang) {
+    if (lang.isEmpty()) {
+      throw new IllegalArgumentException("Field is null.Enter supported ISO languages: " + SUPPORTED_LANGUAGES);
+    }
+  }
+
+  public static VowelCheckable getVowels(String language) {
+    nullChecker(language);
     if (!isValidLanguage(language)) {
-      throw new IllegalArgumentException("Unsupported language: " + language);
+      throw new IllegalArgumentException(
+          "Unsupported format: " + language + ". Supported ISO languages format: " + SUPPORTED_LANGUAGES);
     }
-    switch (language) {
-      case "ru":
-        return new VowelRu();
-      case "en":
-        return new VowelEn();
-      case "hu":
-        return new VowelHu();
-      default:
-        return new VowelEn();
-    }
+
+    return switch (language) {
+      case "ru" -> new VowelRu();
+      case "en" -> new VowelEn();
+      case "hu" -> new VowelHu();
+      default -> throw new IllegalArgumentException("Unsupported language."); // todo link to gitrepo
+    };
   }
 }
 
