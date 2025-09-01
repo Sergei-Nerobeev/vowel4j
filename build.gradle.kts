@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("jacoco")
 }
 
 group = "hu.nerbe"
@@ -14,6 +15,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks.test {
-    useJUnitPlatform()
+tasks.test(Test::useJUnitPlatform)
+
+jacoco {
+    toolVersion = "0.8.11"
 }
+
