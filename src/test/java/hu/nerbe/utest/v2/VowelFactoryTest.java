@@ -38,6 +38,6 @@ class VowelFactoryTest {
   @DisplayName("Should throw exception for null")
   @Test
   void getVowels_shouldThrowException_forNull() {
-    assertThrows(NullPointerException.class, () -> VowelFactory.getVowels(null));
+    assertThrows(IllegalArgumentException.class, () -> VowelFactory.getVowels(null));
   }
 }

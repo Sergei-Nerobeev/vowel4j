@@ -12,17 +12,10 @@ public class VowelFactory {
       .collect(Collectors.toUnmodifiableSet());
 
   private static boolean isValidLanguage(String lang) {
-    return SUPPORTED_LANGUAGES.contains(lang);
-  }
-
-  private static void nullChecker(String lang) {
-    if (lang.isEmpty()) {
-      throw new IllegalArgumentException("Field is null.Enter supported ISO languages: " + SUPPORTED_LANGUAGES);
-    }
+    return lang != null && SUPPORTED_LANGUAGES.contains(lang);
   }
 
   public static VowelCheckable getVowels(String language) {
-    nullChecker(language);
     if (!isValidLanguage(language)) {
       throw new IllegalArgumentException(
           "Unsupported format: " + language + ". Supported ISO languages format: " + SUPPORTED_LANGUAGES);
