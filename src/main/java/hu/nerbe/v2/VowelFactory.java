@@ -25,7 +25,8 @@ public class VowelFactory {
       case "ru" -> new VowelRu();
       case "en" -> new VowelEn();
       case "hu" -> new VowelHu();
-      default -> throw new IllegalArgumentException("Unsupported language."); // todo link to gitrepo
+      default -> throw new IllegalArgumentException("Unsupported language.You can add your language here: " +
+                                                        "https://github.com/Sergei-Nerobeev/vowel4j");
     };
   }
 }
