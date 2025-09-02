@@ -12,17 +12,10 @@ public class VowelFactory {
       .collect(Collectors.toUnmodifiableSet());
 
   private static boolean isValidLanguage(String lang) {
-    return SUPPORTED_LANGUAGES.contains(lang);
-  }
-
-  private static void nullChecker(String lang) {
-    if (lang.isEmpty()) {
-      throw new IllegalArgumentException("Field is null.Enter supported ISO languages: " + SUPPORTED_LANGUAGES);
-    }
+    return lang != null && SUPPORTED_LANGUAGES.contains(lang);
   }
 
   public static VowelCheckable getVowels(String language) {
-    nullChecker(language);
     if (!isValidLanguage(language)) {
       throw new IllegalArgumentException(
           "Unsupported format: " + language + ". Supported ISO languages format: " + SUPPORTED_LANGUAGES);
@@ -32,7 +25,8 @@ public class VowelFactory {
       case "ru" -> new VowelRu();
       case "en" -> new VowelEn();
       case "hu" -> new VowelHu();
-      default -> throw new IllegalArgumentException("Unsupported language."); // todo link to gitrepo
+      default -> throw new IllegalArgumentException("Unsupported language.You can add your language here: " +
+                                                        "https://github.com/Sergei-Nerobeev/vowel4j");
     };
   }
 }
