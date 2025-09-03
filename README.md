@@ -6,7 +6,7 @@
 ---
 
 ### 🌿 Introduction 🌿
-This project was created to help Java developers complete their tasks faster. Elegant and simple solution.
+This project was created to help Java developers complete their tasks faster and not be distracted by routine. Elegant and simple solution.
 
 ---
 ### 🌿 Project Features 🌿
@@ -32,9 +32,9 @@ To ignite the light in your projects, only a few simple steps are required. Ensu
 
 ### 📜 Guide for Contributors 📜
 
-Welcome all who wish to lend their hand to creation. Detailed guide, like an ancient scroll, will open the way for you here:
-
-_`getVowels(Supported ISO languages format);`_
+- 🌿 1.Write your class and create a set with your language vowels.
+- 🌿 2 Add new VowelYOUR_LANGUAGE() in VowelFactory like case.
+- 🌿 3 Don't forget to write the tests on it in the utest folder. 
 
 ---
 
