@@ -32,9 +32,9 @@ To ignite the light in your projects, only a few simple steps are required. Ensu
 
 ### 📜 Guide for Contributors 📜
 
-- 🌿 1.Write your class and create a set with your language vowels.
-- 🌿 2 Add new VowelYOUR_LANGUAGE() in VowelFactory like case.
-- 🌿 3 Don't forget to write the tests on it in the utest folder. 
+- 🌿 1. Write your class and create a set with your language vowels.
+- 🌿 2. Add new VowelYOUR_LANGUAGE() in VowelFactory like case.
+- 🌿 3. Don't forget to write the tests on it in the utest folder. 
 
 ---
 
