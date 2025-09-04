@@ -5,7 +5,7 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class VowelFactory {
+public class    VowelFactory {
 
   private static final Set<String> SUPPORTED_LANGUAGES = Arrays
       .stream(Locale.getISOLanguages())
