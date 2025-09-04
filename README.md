@@ -33,7 +33,7 @@ To ignite the light in your projects, only a few simple steps are required. Ensu
 ### 📜 Guide for Contributors 
 
 1. Fork the repository: Click the "Fork" button in the top-right corner.
-2. Clone your fork: git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+2. Clone your fork: git clone https://github.com/<YOUR_USERNAME>/<YOUR_REPOSITORY>.git
 3. Create a new branch: Use a descriptive name for your branch: git checkout -b fix/your_task_name
 4. Write your class and create a set with your language vowels.
 5. Add new VowelYOUR_LANGUAGE() in VowelFactory like case.
