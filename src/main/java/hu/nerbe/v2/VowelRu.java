@@ -7,6 +7,7 @@ public class VowelRu implements VowelCheckable {
 
   @Override
   public boolean isVowel(char ch) {
+    //
     return VOWELS.contains(ch);
   }
 }
