@@ -47,7 +47,7 @@ public class VowelFactory {
    *                                  is not currently supported by the factory.
    * @see <a href="https://github.com/Sergei-Nerobeev/vowel4j">GitHub Repository</a>
    */
-  public static VowelCheckable getVowels(String language) {
+  public static VowelCheckable getVowelChecker(String language) {
     if (!isValidLanguage(language)) {
       throw new IllegalArgumentException(
           "Unsupported format: " + language + ". Supported ISO languages format: " + SUPPORTED_LANGUAGES);
