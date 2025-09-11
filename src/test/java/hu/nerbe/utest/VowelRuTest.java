@@ -1,9 +1,14 @@
-package hu.nerbe.utest.v2;
+package hu.nerbe.utest;
 
-import hu.nerbe.v2.VowelRu;
+import hu.nerbe.VowelFactory;
+import hu.nerbe.VowelRu;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,7 +20,7 @@ class VowelRuTest {
   @DisplayName("Valid Vowels Ru")
   @ParameterizedTest
   @ValueSource(
-      chars = {'а', 'е', 'ё', 'и', 'у', 'ы', 'э', 'ю', 'я'})
+      chars = {'а', 'е', 'ё', 'и', 'й', 'у', 'ы', 'э', 'ю', 'я', 'о'})
   void testValidVowelRu(char vowel) {
 
     assertTrue(vowelRu.isVowel(vowel));
@@ -41,5 +46,23 @@ class VowelRuTest {
   void testInvalidSymbolRu(char symbol) {
 
     assertFalse(vowelRu.isVowel(symbol));
+  }
+
+  @DisplayName("Checking String word with RU")
+  @Test
+  void testWithStringWord() {
+    var ru = VowelFactory.getVowelChecker("ru");
+    String chekWord = "ворона";
+    boolean[] expected = {false, true, false, true, false, true};
+    int i = 0;
+
+    for (char ch : chekWord.toCharArray()) {
+      boolean actual = ru.isVowel(ch);
+
+      Assertions.assertEquals(expected[i], actual);
+      i++;
+
+    }
+
   }
 }

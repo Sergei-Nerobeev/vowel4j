@@ -1,4 +1,4 @@
-package hu.nerbe.v2;
+package hu.nerbe;
 
 /**
  * Defines a contract for vowel-checking services.
