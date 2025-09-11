@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "hu.nerbe"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
