@@ -2,6 +2,7 @@ package hu.nerbe.utest;
 
 import hu.nerbe.VowelEn;
 import hu.nerbe.VowelFactory;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -47,10 +48,16 @@ class VowelEnTest {
   @Test
   void testWithStringWord() {
     var en = VowelFactory.getVowelChecker("en");
-    String wordHu = "version";
-    for (char ch : wordHu.toCharArray()) {
-      boolean result = en.isVowel(ch);
-      System.out.println(result);
+    String wordEn = "version";
+    boolean[] expected = {false, true, false, false, true, true, false};
+    int i = 0;
+
+    for (char ch : wordEn.toCharArray()) {
+      boolean actual = en.isVowel(ch);
+
+      Assertions.assertEquals(expected[i],actual);
+      i++;
     }
   }
+
 }
