@@ -1,7 +1,9 @@
 package hu.nerbe.utest;
 
 import hu.nerbe.VowelEn;
+import hu.nerbe.VowelFactory;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -39,5 +41,16 @@ class VowelEnTest {
   void testInvalidSymbolRu(char symbol) {
 
     assertFalse(vowelEn.isVowel(symbol));
+  }
+
+  @DisplayName("Checking String word EN")
+  @Test
+  void testWithStringWord() {
+    var en = VowelFactory.getVowelChecker("en");
+    String wordHu = "version";
+    for (char ch : wordHu.toCharArray()) {
+      boolean result = en.isVowel(ch);
+      System.out.println(result);
+    }
   }
 }
