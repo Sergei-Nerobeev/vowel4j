@@ -1,6 +1,6 @@
-package hu.nerbe.utest.v2;
+package hu.nerbe.utest;
 
-import hu.nerbe.v2.VowelEn;
+import hu.nerbe.VowelHu;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -8,25 +8,25 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class VowelEnTest {
-  VowelEn vowelEn = new VowelEn();
+class VowelHuTest {
+  VowelHu vowelHu = new VowelHu();
 
-  @DisplayName("Invalid Vowels En")
+  @DisplayName("InvalidVowelHu")
   @ParameterizedTest
   @ValueSource(
-      chars = {'a', 'e', 'i', 'o', 'u', 'y'})
-  void testInvalidVowelEn(char vowel) {
+      chars = {'a', 'e', 'i', 'o', 'ö', 'u', 'ü', 'á', 'é', 'í', 'ó', 'ő', 'ú', 'ű'})
+  void testInvalidVowelHu(char vowel) {
 
-    assertTrue(vowelEn.isVowel(vowel));
+    assertTrue(vowelHu.isVowel(vowel));
   }
 
-  @DisplayName("Invalid Consonants En")
+  @DisplayName("InvalidConsonantHu")
   @ParameterizedTest
   @ValueSource(
       chars = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'})
-  void testInvalidConsonantEn(char consonant) {
+  void testInvalidConsonantHu(char consonant) {
 
-    assertFalse(vowelEn.isVowel(consonant));
+    assertFalse(vowelHu.isVowel(consonant));
   }
 
   @DisplayName("Invalid Symbols")
@@ -38,6 +38,6 @@ class VowelEnTest {
       })
   void testInvalidSymbolRu(char symbol) {
 
-    assertFalse(vowelEn.isVowel(symbol));
+    assertFalse(vowelHu.isVowel(symbol));
   }
 }

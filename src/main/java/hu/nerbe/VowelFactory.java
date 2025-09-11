@@ -1,4 +1,4 @@
-package hu.nerbe.v2;
+package hu.nerbe;
 
 import java.util.Arrays;
 import java.util.Locale;

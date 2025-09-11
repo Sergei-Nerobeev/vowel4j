@@ -1,6 +1,6 @@
-package hu.nerbe.utest.v2;
+package hu.nerbe.utest;
 
-import hu.nerbe.v2.VowelRu;
+import hu.nerbe.VowelRu;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
