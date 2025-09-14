@@ -44,12 +44,20 @@ class VowelHuTest {
     assertFalse(vowelHu.isVowel(symbol));
   }
 
-  @DisplayName("Checking String word HU")
+  @DisplayName("Checking Sentence Positive HU")
   @Test
-  void testWithStringWord() {
+  void testWithSentencePositiveHu() {
     var hu = VowelFactory.getVowelChecker("hu");
-    String wordHu = "északi";
-    boolean[] expected = {true, false, false, true, false, true};
+    String wordHu = "Jámbor, hűs vizek fűtötték a kvártélyt, bőgve.";
+    boolean[] expected = {
+//        J     a      m      b      o     r      ,             h      u     s             v      i     z      e     k
+        false, true, false, false, true, false, false, false, false, true, false, false, false, true, false, true, false,
+//              f     u     t      o      t      t      e     k             a           k        v     a      r     t      e
+        false, false,true, false, true, false, false, true, false, false, true, false, false, false, true, false, false, true,
+//        l     y      t      ,             b     o      g      v     e      .
+        false, false, false, false, false, false, true, false, false, true, false
+
+    };
     int i = 0;
 
     for (char ch : wordHu.toCharArray()) {

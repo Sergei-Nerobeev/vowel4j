@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -20,7 +18,7 @@ class VowelRuTest {
   @DisplayName("Valid Vowels Ru")
   @ParameterizedTest
   @ValueSource(
-      chars = {'а', 'е', 'ё', 'и', 'й', 'у', 'ы', 'э', 'ю', 'я', 'о'})
+      chars = {'а', 'е', 'ё', 'и', 'у', 'ы', 'э', 'ю', 'я', 'о'})
   void testValidVowelRu(char vowel) {
 
     assertTrue(vowelRu.isVowel(vowel));
@@ -48,12 +46,21 @@ class VowelRuTest {
     assertFalse(vowelRu.isVowel(symbol));
   }
 
-  @DisplayName("Checking String word with RU")
+  @DisplayName("Checking Sentence Positive RU")
   @Test
-  void testWithStringWord() {
+  void testWithSentencePositiveRu() {
     var ru = VowelFactory.getVowelChecker("ru");
-    String chekWord = "ворона";
-    boolean[] expected = {false, true, false, true, false, true};
+    String chekWord = "Съешь ещё этих мягких французских булок, да выпей чаю.";
+    boolean[] expected = {
+//        С       ъ     е     ш       ь           е      щ     ё            э      т     и    х
+        false, false, true, false, false, false, true, false, true, false, true, false, true, false, false,
+//        м     я      г      к      и     х              ф     р      а      н    ц      у     з      с       к     и     х
+        false, true, false, false, true, false, false, false, false, true, false, false, true, false, false, false, true, false,
+//              б      у      л      о     к      ,             д      а            в     ы     п       е     й
+        false, false, true, false, true, false, false, false, false, true, false, false, true, false, true, false, false,
+//        ч      а     ю
+        false, true, true, false
+    };
     int i = 0;
 
     for (char ch : chekWord.toCharArray()) {
