@@ -85,6 +85,6 @@ class VowelRuTest {
       Assertions.assertEquals(expected[i], actual);
       i++;
     }
-
   }
+
 }

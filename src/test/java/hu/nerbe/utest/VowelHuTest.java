@@ -2,9 +2,7 @@ package hu.nerbe.utest;
 
 import hu.nerbe.VowelFactory;
 import hu.nerbe.VowelHu;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -17,7 +15,10 @@ class VowelHuTest {
   @DisplayName("InvalidVowelHu")
   @ParameterizedTest
   @ValueSource(
-      chars = {'a', 'e', 'i', 'o', 'ö', 'u', 'ü', 'á', 'é', 'í', 'ó', 'ő', 'ú', 'ű'})
+      chars = {
+          'a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'ö', 'Ö', 'u', 'U', 'ü', 'Ü', 'á', 'Á', 'é', 'É',
+          'í', 'Í', 'ó', 'Ó', 'ő', 'Ő', 'ú', 'Ú', 'ű', 'Ű'
+      })
   void testInvalidVowelHu(char vowel) {
 
     assertTrue(vowelHu.isVowel(vowel));
@@ -50,11 +51,10 @@ class VowelHuTest {
     var hu = VowelFactory.getVowelChecker("hu");
     String wordHu = "Jámbor, hűs vizek fűtötték a kvártélyt, bőgve.";
     boolean[] expected = {
-//        J     a      m      b      o     r      ,             h      u     s             v      i     z      e     k
-        false, true, false, false, true, false, false, false, false, true, false, false, false, true, false, true, false,
-//              f     u     t      o      t      t      e     k             a           k        v     a      r     t      e
-        false, false,true, false, true, false, false, true, false, false, true, false, false, false, true, false, false, true,
-//        l     y      t      ,             b     o      g      v     e      .
+        false, true, false, false, true, false, false, false, false, true, false, false, false, true, false, true,
+        false,
+        false, false, true, false, true, false, false, true, false, false, true, false, false, false, true, false,
+        false, true,
         false, false, false, false, false, false, true, false, false, true, false
 
     };
@@ -67,4 +67,27 @@ class VowelHuTest {
       i++;
     }
   }
+
+  @DisplayName("Mix char RU EN HU positive test")
+  @ParameterizedTest
+  @ValueSource(
+      strings = "Az úJság(коT)% Female:"
+  )
+  void testMixCharRuEnHuPositive(String sentence) {
+    var hu = VowelFactory.getVowelChecker("hu");
+    boolean[] expected =
+        {
+            true, false, false, true, false, false, true, false, false, false, false, false, false, false, false,
+            false, true, false, true, false, true, false
+        };
+    int i = 0;
+
+    for (char ch : sentence.toCharArray()) {
+      boolean actual = hu.isVowel(ch);
+
+      Assertions.assertEquals(expected[i], actual);
+      i++;
+    }
+  }
+
 }

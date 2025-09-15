@@ -17,7 +17,7 @@ class VowelEnTest {
   @DisplayName("Invalid Vowels En")
   @ParameterizedTest
   @ValueSource(
-      chars = {'a', 'e', 'i', 'o', 'u', 'y'})
+      chars = {'a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U', 'y', 'Y'})
   void testInvalidVowelEn(char vowel) {
 
     assertTrue(vowelEn.isVowel(vowel));
@@ -51,17 +51,31 @@ class VowelEnTest {
     String wordEn = "The quick brown fox jumps over the lazy dog.";
     boolean[] expected =
         {
-            // T     h      e          q      u     i      c      k              b      r     o     w      n
             false, false, true, false, false, true, true, false, false, false, false, false, true, false, false, false,
-            // f    o      x             j       u     m     p     s              o      v     e     r
             false, true, false, false, false, true, false, false, false, false, true, false, true, false, false,
-            // t     h     e            l       a     z     y             d     o     g
             false, false, true, false, false, true, false, true, false, false, true, false, false
         };
 
     int i = 0;
 
     for (char ch : wordEn.toCharArray()) {
+      boolean actual = en.isVowel(ch);
+
+      Assertions.assertEquals(expected[i], actual);
+      i++;
+    }
+  }
+
+  @DisplayName("Mix char EN RU HU positive test")
+  @ParameterizedTest
+  @ValueSource(
+      strings = {"Толя is #6 ű>"})
+  void testMixCharRuEnHuPositive(String sentence) {
+    var en = VowelFactory.getVowelChecker("en");
+    boolean[] expected = {false, false, false, false, false, true, false, false, false, false, false, false, false};
+    int i = 0;
+
+    for (char ch : sentence.toCharArray()) {
       boolean actual = en.isVowel(ch);
 
       Assertions.assertEquals(expected[i], actual);

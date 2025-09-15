@@ -6,7 +6,6 @@ package hu.nerbe;
  * @see VowelCheckable
  * @since 2025-09-15
  * Defines a contract for vowel-checking services.
- * <p>
  * This interface is used to abstract the logic of vowel identification,
  * allowing for different implementations for various languages.
  */
@@ -14,7 +13,6 @@ package hu.nerbe;
 public interface VowelCheckable {
   /**
    * Checks if a given character is a vowel.
-   * <p>
    * The definition of a vowel is specific to the implementing class's language rules.
    *
    * @param ch The character to check.

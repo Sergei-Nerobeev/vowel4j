@@ -10,7 +10,7 @@ import java.util.Set;
  */
 
 public class VowelEn implements VowelCheckable {
-  public static final Set<Character> VOWELS = Set.of('a', 'e', 'i', 'o', 'u', 'y');
+  public static final Set<Character> VOWELS = Set.of('a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U', 'y', 'Y');
 
   @Override
   public boolean isVowel(char ch) {

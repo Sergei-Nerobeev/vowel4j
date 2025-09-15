@@ -11,7 +11,8 @@ import java.util.Set;
 
 public class VowelHu implements VowelCheckable {
   public static final Set<Character>
-      VOWELS = Set.of('a', 'e', 'i', 'o', 'ö', 'u', 'ü', 'á', 'é', 'í', 'ó', 'ő', 'ú', 'ű');
+      VOWELS = Set.of('a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'ö', 'Ö', 'u', 'U', 'ü', 'Ü', 'á', 'Á', 'é', 'É',
+                      'í', 'Í', 'ó', 'Ó', 'ő', 'Ő', 'ú', 'Ú', 'ű', 'Ű');
 
   @Override
   public boolean isVowel(char ch) {
