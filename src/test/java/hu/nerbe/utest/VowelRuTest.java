@@ -18,7 +18,7 @@ class VowelRuTest {
   @DisplayName("Valid Vowels Ru")
   @ParameterizedTest
   @ValueSource(
-      chars = {'а', 'е', 'ё', 'и', 'у', 'ы', 'э', 'ю', 'я', 'о'})
+      chars = {'а', 'А', 'е', 'Е', 'ё', 'Ё', 'и', 'И', 'о', 'О', 'у', 'У', 'ы', 'Ы', 'э', 'Э', 'ю', 'Ю', 'я', 'Я'})
   void testValidVowelRu(char vowel) {
 
     assertTrue(vowelRu.isVowel(vowel));
@@ -50,15 +50,13 @@ class VowelRuTest {
   @Test
   void testWithSentencePositiveRu() {
     var ru = VowelFactory.getVowelChecker("ru");
-    String chekWord = "Съешь ещё этих мягких французских булок, да выпей чаю.";
+    String chekWord = "СъешЬ ещё-Этих мЯгких фрАнцузских булок! да выпей чаЮ.";
     boolean[] expected = {
-//        С       ъ     е     ш       ь           е      щ     ё            э      т     и    х
         false, false, true, false, false, false, true, false, true, false, true, false, true, false, false,
-//        м     я      г      к      и     х              ф     р      а      н    ц      у     з      с       к     и     х
-        false, true, false, false, true, false, false, false, false, true, false, false, true, false, false, false, true, false,
-//              б      у      л      о     к      ,             д      а            в     ы     п       е     й
-        false, false, true, false, true, false, false, false, false, true, false, false, true, false, true, false, false,
-//        ч      а     ю
+        false, true, false, false, true, false, false, false, false, true, false, false, true, false, false, false,
+        true, false,
+        false, false, true, false, true, false, false, false, false, true, false, false, true, false, true, false,
+        false,
         false, true, true, false
     };
     int i = 0;
@@ -68,7 +66,24 @@ class VowelRuTest {
 
       Assertions.assertEquals(expected[i], actual);
       i++;
+    }
+  }
 
+  @DisplayName("Mix char RU EN HU positive test")
+  @ParameterizedTest
+  @ValueSource(
+      strings = {"А роза go=önéK?"})
+  void testMixCharRuEnHuPositive(String sentence) {
+    var ru = VowelFactory.getVowelChecker("ru");
+    boolean[] expected =
+        {true, false, false, true, false, true, false, false, false, false, false, false, false, false, false};
+    int i = 0;
+
+    for (char ch : sentence.toCharArray()) {
+      boolean actual = ru.isVowel(ch);
+
+      Assertions.assertEquals(expected[i], actual);
+      i++;
     }
 
   }
