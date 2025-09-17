@@ -1,4 +1,4 @@
-package hu.nerbe.v2;
+package hu.nerbe;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -6,14 +6,16 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
+ * @author Sergei Nerobeev
+ * @version 1.0.1
+ * @see VowelCheckable
+ * @since 2025-09-15
  * A factory class for creating {@link VowelCheckable} instances based on a specified language.
  * <p>
  * This class provides a static method to obtain a vowel checking service for various
  * supported languages, ensuring that the provided language code is a valid ISO language.
  * The factory simplifies the creation of language-specific logic by hiding the
  * implementation details.
- *
- * @see VowelCheckable
  */
 public class VowelFactory {
   /**
@@ -47,7 +49,7 @@ public class VowelFactory {
    *                                  is not currently supported by the factory.
    * @see <a href="https://github.com/Sergei-Nerobeev/vowel4j">GitHub Repository</a>
    */
-  public static VowelCheckable getVowels(String language) {
+  public static VowelCheckable getVowelChecker(String language) {
     if (!isValidLanguage(language)) {
       throw new IllegalArgumentException(
           "Unsupported format: " + language + ". Supported ISO languages format: " + SUPPORTED_LANGUAGES);
