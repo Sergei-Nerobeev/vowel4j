@@ -1,5 +1,4 @@
 ![Logo](img/V4Jlogo.jpg)
-<img src="img/V4Jlogo.jpg)" alt="Logo" width="500" height="300"/>
 <div align="center">
   <h1>✨ VOWEL4J ✨</h1>
   <h3>Java Library for comparing char. Returns true if the compared letter is a vowel and false if the compared letter is a consonant.</h3>
