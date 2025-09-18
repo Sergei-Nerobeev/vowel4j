@@ -1,4 +1,4 @@
-package hu.nerbe;
+package io.github.snerobeev;
 
 import java.util.Arrays;
 import java.util.Locale;

@@ -1,4 +1,4 @@
-package hu.nerbe;
+package io.github.snerobeev;
 
 /**
  * @author Sergei Nerobeev

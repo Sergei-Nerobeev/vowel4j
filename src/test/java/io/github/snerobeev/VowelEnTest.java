@@ -1,7 +1,5 @@
-package hu.nerbe.utest;
+package io.github.snerobeev;
 
-import hu.nerbe.VowelEn;
-import hu.nerbe.VowelFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

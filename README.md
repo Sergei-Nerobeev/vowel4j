@@ -59,7 +59,7 @@ To ignite the light in your projects, only a few simple steps are required. Ensu
 Feel free to reach out to us to discuss collaboration or simply to admire the beauty of the project.
 
 <div align="center">
-GitHub https://github.com/Sergei-Nerobeev/vowel4j
+GitHub https://github.com/snerobeev/vowel4j
 </div>
 
 
