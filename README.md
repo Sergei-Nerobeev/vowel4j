@@ -1,11 +1,13 @@
-![Logo](img/V4Jlogo.jpg)
+[//]: # (![Logo]&#40;img/V4Jlogo.jpg&#41;)
+
+<img src="img/V4Jlogo.jpg" alt="Logo" width="500" height="150"/>
 <div align="center">
   <h1>✨ VOWEL4J ✨</h1>
-  <h3>Java Library for comparing char. Returns true if the compared letter is a vowel and false if the compared letter is a consonant.</h3>
+  <h3>Java Library for comparing char. Returns true if the compared letter is a vowel.</h3>
 </div>
 
 ---
-
+fixe
 ### 🌿 Introduction 
 This project was created to help Java developers complete their tasks faster and not be distracted by routine. Elegant and simple solution.
 
