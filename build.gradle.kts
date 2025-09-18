@@ -1,7 +1,14 @@
+
 plugins {
     id("java")
     id("jacoco")
-    id("maven-publish")
+    id("com.vanniktech.maven.publish") version "0.34.0"
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
 }
 
 group = "hu.nerbe"
@@ -22,10 +29,8 @@ jacoco {
     toolVersion = "0.8.11"
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
+mavenPublishing {
+    coordinates("hu.nerbe", "vowel4j", "1.0.1")
 
             pom {
                 name.set("vowel4j")
@@ -54,6 +59,13 @@ publishing {
                 }
             }
         }
-    }
+
+mavenPublishing {
+    publishToMavenCentral()
+    signAllPublications()
 }
+
+
+
+
 
