@@ -11,7 +11,7 @@ java {
     }
 }
 
-group = "hu.nerbe"
+group = "io.github.snerobeev"
 version = "1.0.1"
 
 repositories {
@@ -30,12 +30,12 @@ jacoco {
 }
 
 mavenPublishing {
-    coordinates("hu.nerbe", "vowel4j", "1.0.1")
+    coordinates("io.github.snerobeev", "vowel4j", "1.0.1")
 
             pom {
                 name.set("vowel4j")
                 description.set("Java Library for comparing char.")
-                url.set("https://github.com/Sergei-Nerobeev/vowel4j")
+                url.set("https://github.com/snerobeev/vowel4j")
 
                 licenses {
                     license {
@@ -53,9 +53,9 @@ mavenPublishing {
                 }
 
                 scm {
-                    connection.set("scm:git:git://github.com/Sergei-Nerobeev/vowel4j")
-                    developerConnection.set("scm:git:ssh://git@github.com/Sergei-Nerobeev/vowel4j")
-                    url.set("https://github.com/Sergei-Nerobeev/vowel4j")
+                    connection.set("scm:git:git://github.com/snerobeev/vowel4j")
+                    developerConnection.set("scm:git:ssh://git@github.com/snerobeev/vowel4j")
+                    url.set("https://github.com/snerobeev/vowel4j")
                 }
             }
         }
