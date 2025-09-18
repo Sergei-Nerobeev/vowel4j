@@ -32,7 +32,6 @@ build/
 .idea/**/gradle.xml
 .idea/**/libraries
 .gradle/
-build/
 gradle.properties
 
 # Папка с данными кэша и временные файлы
